@@ -1,0 +1,10 @@
+Eng=80;
+Math=70;
+Cs=90;
+total=Eng+Math+Cs;
+percent=total/300*100;
+console.log("Marks of English=",Eng);
+console.log("Marks of Math=",Math);
+console.log("Marks of Cs=",Cs);
+console.log("Total marks=",total);
+console.log("Total percentage",percent);
