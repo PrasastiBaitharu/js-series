@@ -1,0 +1,9 @@
+let pi = 3.14;
+let r = 30;
+let h = 80;
+console.log("Radius of the cylinder =" , r);
+console.log("Height of the cylinder =" , h);
+sArea = 2 * pi * r * h;
+vol = pi * r * r * h;
+console.log("Surface area of the cylinder =" , sArea);
+console.log("Volume of the cylinder =" , vol); 
