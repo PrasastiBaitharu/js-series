@@ -1,0 +1,14 @@
+let n = 1534;
+console.log("Number is :" , n);
+let a = n % 10;
+let p = parseInt(n/10);
+let b = p % 10;
+let q = parseInt(p/10);
+let c = q % 10;
+let d = parseInt(q/10);
+console.log("Digit1 =" , d);
+console.log("Digit2 =" , c);
+console.log("Digit3 =" , b);
+console.log("Digit4 =" , a);
+console.log("Digit1 + Digit3 =" , d + b);
+console.log("Digit2 * Digit4 =" , c * a);
