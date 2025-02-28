@@ -1,52 +1,48 @@
-//Converting asynchronous to synchornous
+//Async to sync
 
-function register(){
-    return new Promise((resolve, reject)=>{
-        setTimeout(()=>{
-            console.log("Register end");
-            resolve();
-        },1000);
-    })
-    
+function register(callback){
+    setTimeout(() => {
+        console.log("Register end");
+        callback();
+    }, 1000);
 }
-function sendMail(){
-    return new Promise((resolve, reject)=>{
-        setTimeout(()=>{
-            console.log("Send Mail end");
-            resolve();
-        },1000);
-    })
+
+function sendMail(callback){
+    setTimeout(() => {
+        console.log("Get mail end");
+        callback();
+    }, 1000);
 }
-function login(){
-    return new Promise((resolve, reject)=>{
-        setTimeout(()=>{
-            console.log("Login end");
-            resolve();
-        },3000);
-    })
-    
+
+function login(callback){
+    setTimeout(() => {
+        console.log("Login end");
+        callback();
+    }, 3000);
 }
-function getData(){
-    return new Promise((resolve, reject)=>{
-        setTimeout(()=>{
-            console.log("Get Data end");
-            resolve();
-        },1000);
-    })
+
+function getData(callback){
+    setTimeout(() => {
+        console.log("Get data end");
+        callback();
+    }, 1000);
 }
+
 function displayData(){
-    return new Promise((resolve, reject)=>{
-        setTimeout(()=>{
-            console.log("Display Data end");
-            resolve();
-        },1000);
-    })
+    setTimeout(() => {
+        console.log("Display data end");
+    }, 1000);
 }
-register()
-.then(sendMail)
-.then(login)
-.then(getData)
-.then(displayData)
 
+register(function(){
+    sendMail(function(){
+        login(function(){
+            getData(function(){
+                displayData()
+            })
+        })
+    })
+});
 
-console.log("Other applications executed");
+//BUT It was creating a callback hell 
+//To avoid the callback hell javascript has given the facility of promise
